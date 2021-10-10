@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Tshirt </title>
+<style>
+  input[type=text],
+   select {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+   }
+
+   input[type=submit] {
+     width: 50%;
+     background-color: black;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+   }
+
+   input[type=reset] {
+     width: 50%;
+     background-col
+  input[type=reset] {
+       width: 50%;
+       background-color: black;
+       color: white;
+       padding: 14px 20px;
+       margin: 8px 0;
+       border: none;
+       border-radius: 4px;
+       cursor: pointer;
+     }
+  input[type=date] {
+       width: 100%;
+       padding: 12px 20px;
+       margin: 8px 0;
+       display: inline-block;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       box-sizing: border-box;
+     }
+   input[type=email] {
+       width: 50%;
+       padding: 12px 20px;
+       margin: 8px 0;
+       display: inline-block;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       box-sizing: border-box;
+     }
+     ul.breadcrumb {
+       padding: 10px 16px;
+       list-style: none;
+       background-color: #eee;
+     }
+     ul.breadcrumb li {
+       display: inline;
+       font-size: 18px;
+     }
+     ul.breadcrumb li+li:before {
+       padding: 8px;
+       color: black;
+       content: "/\00a0";
+     }
+     ul.breadcrumb li a {
+       color: #0275d8;
+       text-decoration: none;
+     }
+     ul.breadcrumb li a:hover {
+       color: #01447e;
+       text-decoration: underline;
+     }
+  </style>
+</head>
+<body style="background-color:#F8ECE0">
+  <script>
+  function validate() {
+     var regName = /^[a-zA-Z]+$/;
+     var name = document.getElementById('fname').value;
+     if(!regName.test(name)){
+        alert('Please enter valid name.');
+        document.getElementById('fname').focus();
+        return false;
+    }
+    const d = new Date();
+    yr = d.getFullYear();
+    month = d.getMonth() + 1;
+    day = d.getDate();
+    let fname = document.forms["f"]["fname"].value;
+    let lname = document.forms["f"]["lname"].value;
+    let email = document.forms["f"]["email"].value;
+    let quantity = document.forms["f"]["Quantity"].value;
+    var new_window = window.open("", "_self");
+        new_window.document.write("<h1>Order Confirmed</h1>");
+        new_window.document.write("<br><b>First Name</b>: " + fname);
+        new_window.document.write("<br><b>Last Name</b>: " + lname);
+        new_window.document.write("<br><b>Quantity</b>: " + quantity);
+        new_window.document.write("<br><b>Email</b>: " + email);
+        new_window.document.write("<br><b>Date of order</b>: " + d.toDateString());
+
+  }
+  </script>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">OneStop</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
+<br>
+  <img src="cloth.JPG" alt="Clothes" width="100%" height="400">
+  <br>
+  <hr>
+  <form name="f" onsubmit="return validate()">
+  <fieldset>
+    <legend align=center><b><I>Personal Details</I></b></legend>
+    <br>
+    <br>
+    <label for="fname"><b>First name :</b></label>
+    <input type="text" id="fname" name="fname" required><br><br>
+    <label for="lname"><b>Last name :</b></label>
+    <input type="text" id="lname" name="lname" required ><br><br>
+    <label for="email">&emsp;&emsp;<b>Email : </b></label>
+    <input type="email" id="email" name="email" required><br><br>
+   <br>
+  </fieldset>
+  <hr>
+  <fieldset>
+    <legend align=center><b><I>Order Details</I></b></legend>
+    <br>
+    <br>
+    <label for="shirt"><b>Type of Tshirt :</b></label>
+   <select name="tshirt" id="tshirt">
+  <option value="Standard">Standard</option>
+  <option value="V-neck">V-neck</option>
+  <option value="Sleeveless">Sleeveless</option>
+  <option value="Polo">Polo</option>
+  </select>
+  <br>
+  <br>
+    <label for="size"><b>Size :</b></label>
+   <select name="size1" id="size1">
+  <option value="small">small</option>
+  <option value="medium">medium</option>
+  <option value="large">large</option>
+  </select>
+  <p><b>Fabric : </b></p>
+  <input type="radio" id="cotton" name="fav_language" value="Cotton">
+  <label for="cotton">Cotton</label>
+  <input type="radio" id="linen" name="fav_language" value="Linen">
+  <label for="linen">Linen</label>
+  <br><br>
+
+  <p><b>Colour of Tshirt : </b></p>
+  <input type="radio" id="red" name="colour" value="Red">
+  <label for="red">Red</label><br>
+  <input type="radio" id="navy blue" name="colour" value="Navy Blue">
+  <label for="navy blue">Navy Blue</label><br>
+  <input type="radio" id="black" name="colour" value="Black">
+  <label for="black">Black</label><br><br>
+<label for="Quantity"><b>Quantity :</b></label>
+<input type="text" id="Quantity" name="Quantity"><br><br>
+  <label for="Comment"><b>Comments :</b></label><br><br>
+  <textarea id="Comment1" name="Comment1" rows="4" cols="50"></textarea>
+  </fieldset>
+  <hr>
+  <fieldset>
+    <legend align=center><b><I>Shipping Details</I></b></legend>
+    <br>
+    <br>
+    <label for="Address"><b>Address :</b></label><br><br>
+    <textarea id="Address" name="Address" rows="4" cols="50" required></textarea><br><br>
+    <label for="City"> <b>City :</b></label>
+    <input type="text" id="City" name="City" required><br><br>
+    <label for="State / Province">&nbsp;&nbsp; <b>State / Province :</b></label>
+    <input type="text" id="State / Province" name="State / Province" required><br><br>
+    <label for="Postal / Zip Code"><b>Postal / Zip Code : </b></label>
+    <input type="text" id="Postal / Zip Code" name="Postal / Zip Code" required><br><br>
+   <br>
+  </fieldset>
+  <br>
+  &emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;<input type="submit" value="Submit">
+</form>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lavender;">Tshirts</div>
+    <div class="col-sm-4" style="background-color:lavenderblush;">Jeans</div>
+    <div class="col-sm-4" style="background-color:lavender;">Jackets</div>
+  </div>
+</div>
+<br>
+<br>
+<ul class="breadcrumb">
+<li><a href="#">Home</a></li>
+<li><a href="#">Page 1</a></li>
+<li><a href="#">Page 2</a></li>
+<li><a href="#">Page 3</a></li>
+</ul>
+</body>
+</html>
